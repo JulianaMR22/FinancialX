@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  background-color: #f1f2f6;
+}
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.dropdowns {
+  display: flex;
+  margin-bottom: 11px;
+}
