@@ -11,10 +11,10 @@ function App() {
         <DropDownYear />
         <DropDownMonth />
       </div>
-      <Collapsable title="Obligations" />
-      <Collapsable title="Personal" />
-      <Collapsable title="Savings" />
-      <Collapsable title="Summary" />
+      <Collapsable title="Obligations" showGeneralTable={true} />
+      <Collapsable title="Personal" showGeneralTable={true} />
+      <Collapsable title="Savings" showGeneralTable={true} />
+      <Collapsable title="Summary" showGeneralTable={false} />
     </div>
   );
 }
