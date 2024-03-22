@@ -1,6 +1,6 @@
 import "../styles/ItemsTable.css";
 
-function ItemsTable() {
+function ItemsTable({ data }) {
   return (
     <div className="container__items-table">
       <table className="table__items">
@@ -15,11 +15,11 @@ function ItemsTable() {
         </thead>
         <tbody>
           <tr>
-            <td className="title__body"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td className="title__body">{data.initialBalance}</td>
+            <td>{data.totalObligations}</td>
+            <td>{data.totalSavings}</td>
+            <td>{data.totalDebits}</td>
+            <td>{data.totalPersonal}</td>
           </tr>
         </tbody>
         <thead className="items__title">
@@ -30,8 +30,8 @@ function ItemsTable() {
         </thead>
         <tbody>
           <tr>
-            <td className="title__body"></td>
-            <td></td>
+            <td className="title__body">{data.sum}</td>
+            <td>{data.residue}</td>
           </tr>
         </tbody>
       </table>

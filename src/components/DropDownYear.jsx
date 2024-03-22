@@ -1,17 +1,17 @@
+import DATA from "./Data";
 import "../styles/DropDownYear.css";
 
-function DropDownYear() {
-  const añoActual = new Date().getFullYear();
-
-  const años = Array.from({ length: 11 }, (_, index) => añoActual - index);
+function DropDownYear({ setSelectYear }) {
+  function selectyear(year) {
+    setSelectYear(year.target.value);
+  }
   return (
     <div className="container__year">
       <p className="year__paragraph">Year</p>
-      <select className="year__select">
-        <option value="">Year</option>
-        {años.map((año) => (
-          <option key={año} value={año}>
-            {año}
+      <select onChange={selectyear} className="year__select">
+        {DATA.years.map((year) => (
+          <option key={year} value={year}>
+            {year}
           </option>
         ))}
       </select>

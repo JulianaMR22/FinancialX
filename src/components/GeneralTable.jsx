@@ -1,6 +1,6 @@
 import "../styles/GeneralTable.css";
 
-function GeneralTable() {
+function GeneralTable({ data }) {
   return (
     <div className="container__general">
       <table className="general__table">
@@ -13,39 +13,16 @@ function GeneralTable() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="title__items">Food</td>
-            <td>$ 600.000</td>
-            <td className="items__check">
-              <input type="checkbox" />
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td className="title__items">Car</td>
-            <td>$ 600.000</td>
-            <td className="items__check">
-              <input type="checkbox" />
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td className="title__items">Month</td>
-            <td>$ 600.000</td>
-            <td className="items__check">
-              <input type="checkbox" />
-            </td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td className="title__items">Bill</td>
-            <td>$ 600.000</td>
-            <td className="items__check">
-              <input type="checkbox" />
-            </td>
-            <td></td>
-          </tr>
+          {data.map((element) => (
+            <tr key={element.name}>
+              <td className="title__items">{element.name}</td>
+              <td>{element.value}</td>
+              <td className="items__check">
+                <input type="checkbox" checked={element.paid} />
+              </td>
+              <td>{element.comments}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
